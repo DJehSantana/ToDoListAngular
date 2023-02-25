@@ -9,13 +9,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { LoginComponent } from './views/login/login.component';
 import { UsuarioComponent } from './views/usuario/usuario.component';
+import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule,
