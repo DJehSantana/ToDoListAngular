@@ -7,6 +7,7 @@ import { UsuarioComponent } from './views/usuario/usuario.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'cadastro', component: CadastroUsuarioComponent },
   { path: 'usuario', component: UsuarioComponent },
   { path: 'login', component: LoginComponent }
 ];

@@ -15,6 +15,7 @@ import { UsuarioComponent } from './views/usuario/usuario.component';
 import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HeaderComponent } from './components/header/header.component';
     UsuarioComponent,
     CadastroUsuarioComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
