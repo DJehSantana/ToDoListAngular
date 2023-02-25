@@ -1,38 +1,39 @@
 <div class="p-grid p-justify-center card">
-    <div class="p-col-12 p-sm-8 p-md-4">
+    <div class="p-col-12 p-sm-10 p-md-6">
         <p-card>
             <div class="p-grid">
-                <div class="p-col-12 text-center">
+                <div class="p-col-12 p-text-center">
                     <h2>Cadastre-se!</h2>
                 </div>
-                <div class="p-col-12">
+                <div class="p-col-10 p-mx-auto">
                     <label for="nome">Nome</label>
-                    <input [(ngModel)]="requestCadastroUsuario.nome" class="p-col-12" id="nome" type="text" pInputText>
-                </div>
-                <div class="p-col-12">
-                    <label for="login">Nickname</label>
-                    <input [(ngModel)]="requestCadastroUsuario.login" class="p-col-12" id="login" type="text"
+                    <input [(ngModel)]="requestCadastroUsuario.nome" class="p-col-12 p-mt-2" id="nome" type="text"
                         pInputText>
                 </div>
-                <div class="p-col-12">
+                <div class="p-col-10 p-mx-auto">
+                    <label for="login">Nickname</label>
+                    <input [(ngModel)]="requestCadastroUsuario.login" class="p-col-12 p-mt-2" id="login" type="text"
+                        pInputText>
+                </div>
+                <div class="p-col-10 p-mx-auto">
                     <label for="email">Email</label>
-                    <input [(ngModel)]="requestCadastroUsuario.email" class="p-col-12" id="email" type="email"
+                    <input [(ngModel)]="requestCadastroUsuario.email" class="p-col-12 p-mt-2" id="email" type="email"
                         placeholder="login@email.com" pInputText>
                 </div>
-                <div class="p-col-12">
+                <div class="p-col-10 p-mx-auto">
                     <label for="senha">Senha</label>
-                    <input [(ngModel)]="requestCadastroUsuario.senha" class="p-col-12" id="senha" type="password"
+                    <input [(ngModel)]="requestCadastroUsuario.senha" class="p-col-12 p-mt-2" id="senha" type="password"
                         pInputText>
                 </div>
-                <div class="p-col-12">
+                <div class="p-col-10 p-mx-auto">
                     <label for="dataNascimento">Data de Nascimento</label>
-                    <input [(ngModel)]="requestCadastroUsuario.dataNascimento" class="p-col-12" id="dataNascimento"
-                        type="date" pInputText>
+                    <input [(ngModel)]="requestCadastroUsuario.dataNascimento" class="p-col-12 p-mt-2"
+                        id="dataNascimento" type="date" pInputText>
                 </div>
-                <div class="p-col-12 text-center p-buttonset">
-                    <button (click)="salvarUsuario()" class="p-col-6" pButton type="button" label="Salvar"
+                <div class="p-col-10 p-mx-auto text-center p-buttonset">
+                    <button (click)="salvarUsuario()" class="p-col-6 p-mt-3" pButton type="button" label="Salvar"
                         icon="pi pi-check"></button>
-                    <button class="p-col-6" pButton type="button" label="Cancelar" icon="pi pi-times"></button>
+                    <button class="p-col-6 p-mt-3" pButton type="button" label="Cancelar" icon="pi pi-times"></button>
                 </div>
             </div>
         </p-card>

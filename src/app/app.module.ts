@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { LoginComponent } from './views/login/login.component';
 import { UsuarioComponent } from './views/usuario/usuario.component';
 import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
+import { HomeComponent } from './views/home/home.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usua
     AppComponent,
     LoginComponent,
     UsuarioComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
