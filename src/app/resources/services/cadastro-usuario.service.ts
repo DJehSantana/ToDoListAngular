@@ -9,11 +9,15 @@ import { ResponseCadastroUsuario } from '../models/ResponseCadastroUsuario';
 })
 export class CadastroUsuarioService {
 
-  constructor(private httpCliente: HttpClient) { }
+  constructor(private $http: HttpClient) { }
 
   public salvarUsuario(requestCadastroUsuario: RequestCadastroUsuario): Observable<ResponseCadastroUsuario> {
-    return this.httpCliente.post<ResponseCadastroUsuario>(
+    return this.$http.post<ResponseCadastroUsuario>(
       'http://localhost:8080/api/usuario',
       requestCadastroUsuario);
+  }
+
+  public listarUsuarios() {
+    return this.$http.get('http://localhost:8080/api/usuario');
   }
 }

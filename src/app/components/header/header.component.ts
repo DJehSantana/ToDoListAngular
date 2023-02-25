@@ -20,7 +20,7 @@ export class HeaderComponent {
     this.items = [
       { label: 'Home', icon: 'pi pi-fw pi-home', url: 'http://localhost:4200/' },
       { label: 'Cadastro', url: 'http://localhost:4200/cadastro' },
-      { label: 'Usuario' }
+      { label: 'Usuario', url: 'http://localhost:4200/usuario' }
     ];
   }
 

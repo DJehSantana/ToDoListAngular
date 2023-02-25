@@ -31,7 +31,7 @@ export class CadastroUsuarioComponent implements OnInit {
     },
       (httpError) => {
         this.alertService.error(httpError.error.parameterViolations[0].message, "Ops! Algo deu errado!");
-        //console.error(httpError.error);
+        console.error(httpError.error);
       });
   }
 }

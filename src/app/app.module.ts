@@ -10,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { TableModule } from 'primeng/table';
 import { LoginComponent } from './views/login/login.component';
 import { UsuarioComponent } from './views/usuario/usuario.component';
 import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CardComponent } from './components/card/card.component';
+import { TableComponent } from './components/table/table.component';
+import { CadastroUsuarioService } from './resources/services/cadastro-usuario.service';
 
 
 @NgModule({
@@ -26,20 +28,21 @@ import { CardComponent } from './components/card/card.component';
     CadastroUsuarioComponent,
     HomeComponent,
     HeaderComponent,
-    CardComponent
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     TabMenuModule,
+    TableModule,
     FormsModule,
     BrowserAnimationsModule,
     InputTextModule,
     ButtonModule,
     CardModule
   ],
-  providers: [],
+  providers: [CadastroUsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
