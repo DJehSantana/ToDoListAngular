@@ -9,10 +9,12 @@ import { CardModule } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { TabMenuModule } from 'primeng/tabmenu';
 import { LoginComponent } from './views/login/login.component';
 import { UsuarioComponent } from './views/usuario/usuario.component';
 import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
 import { HomeComponent } from './views/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -21,12 +23,14 @@ import { HomeComponent } from './views/home/home.component';
     LoginComponent,
     UsuarioComponent,
     CadastroUsuarioComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    TabMenuModule,
     FormsModule,
     BrowserAnimationsModule,
     InputTextModule,
