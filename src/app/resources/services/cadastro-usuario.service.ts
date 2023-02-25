@@ -20,4 +20,9 @@ export class CadastroUsuarioService {
   public listarUsuarios() {
     return this.$http.get('http://localhost:8080/api/usuario');
   }
+
+  public deletarUsuario(id: number) {
+    return this.$http.delete(`http://localhost:8080/api/usuario/${id}`)
+  }
+
 }

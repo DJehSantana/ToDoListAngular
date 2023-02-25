@@ -13,11 +13,25 @@ export class TableComponent {
   constructor(private usuarioService: CadastroUsuarioService) {
   }
 
+
+
   ngOnInit(): void {
     this.usuarioService.listarUsuarios().subscribe(user => {
       this.usuario = user
       console.log(this.usuario);
     });
+
+  }
+
+  deletarUsuario = (id: number) => {
+    try {
+      this.usuarioService.deletarUsuario(id).subscribe();
+
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.ngOnInit();
+    }
 
   }
 }
