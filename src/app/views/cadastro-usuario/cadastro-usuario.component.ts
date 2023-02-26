@@ -27,10 +27,7 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   public salvarUsuario(): void {
-
-    if (this.usuario.dataNascimento) {
-      this.usuario.dataNascimento = new Date(this.usuario.dataNascimento);
-    }
+    console.log(this.usuario.dataNascimento);
     this.usuarioService.salvarUsuario(this.usuario).subscribe((data) => {
       console.log(data);
       this.alertService.success("Usuário cadastrado com sucesso!", "Sucesso!");

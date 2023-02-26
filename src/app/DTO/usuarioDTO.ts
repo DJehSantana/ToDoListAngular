@@ -3,5 +3,5 @@ export class UsuarioCriacaoDTO {
     login: string = "";
     email: string = "";
     senha: string = "";
-    dataNascimento?: Date;
+    dataNascimento?: string;
 }
