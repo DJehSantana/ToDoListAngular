@@ -9,27 +9,24 @@
                 </div>
                 <div class="p-col-10 p-mx-auto">
                     <label for="nome">Nome</label>
-                    <input [(ngModel)]="requestCadastroUsuario.nome" class="p-col-12 p-mt-2" id="nome" type="text"
-                        pInputText>
+                    <input [(ngModel)]="usuario.nome" class="p-col-12 p-mt-2" id="nome" type="text" pInputText>
                 </div>
                 <div class="p-col-10 p-mx-auto">
                     <label for="login">Nickname</label>
-                    <input [(ngModel)]="requestCadastroUsuario.login" class="p-col-12 p-mt-2" id="login" type="text"
-                        pInputText>
+                    <input [(ngModel)]="usuario.login" class="p-col-12 p-mt-2" id="login" type="text" pInputText>
                 </div>
                 <div class="p-col-10 p-mx-auto">
                     <label for="email">Email</label>
-                    <input [(ngModel)]="requestCadastroUsuario.email" class="p-col-12 p-mt-2" id="email" type="email"
+                    <input [(ngModel)]="usuario.email" class="p-col-12 p-mt-2" id="email" type="email"
                         placeholder="login@email.com" pInputText>
                 </div>
                 <div class="p-col-10 p-mx-auto">
                     <label for="senha">Senha</label>
-                    <input [(ngModel)]="requestCadastroUsuario.senha" class="p-col-12 p-mt-2" id="senha" type="password"
-                        pInputText>
+                    <input [(ngModel)]="usuario.senha" class="p-col-12 p-mt-2" id="senha" type="password" pInputText>
                 </div>
                 <div class="p-col-10 p-mx-auto">
                     <label for="dataNascimento">Data de Nascimento</label>
-                    <input [(ngModel)]="requestCadastroUsuario.dataNascimento" class="p-col-12 p-mt-2"
+                    <input [(ngModel)]="usuario.dataNascimento" dateFormat="dd/mm/yyyy" class="p-col-12 p-mt-2"
                         id="dataNascimento" type="date" pInputText>
                 </div>
                 <div class="p-col-10 p-mx-auto text-center p-buttonset">

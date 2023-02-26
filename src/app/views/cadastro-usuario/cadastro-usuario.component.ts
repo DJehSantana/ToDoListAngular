@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RequestCadastroUsuario } from 'src/app/resources/models/RequestCadastroUsuario';
+import { UsuarioCriacaoDTO } from 'src/app/DTO/usuarioDTO';
 import { AlertService } from 'src/app/resources/services/alert.service';
-import { CadastroUsuarioService } from 'src/app/resources/services/cadastro-usuario.service';
+import { UsuarioService } from 'src/app/resources/services/usuario.service';
+import { FormValidator } from 'src/app/helpers/validators/formValidator';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -10,23 +12,27 @@ import { CadastroUsuarioService } from 'src/app/resources/services/cadastro-usua
 })
 export class CadastroUsuarioComponent implements OnInit {
 
-  public requestCadastroUsuario: RequestCadastroUsuario;
+  id: any;
+  usuario: UsuarioCriacaoDTO = new UsuarioCriacaoDTO();
+  formValidator: FormValidator = new FormValidator(this.formBuilder);
 
   constructor(
-    private cadastroUsuarioService: CadastroUsuarioService,
-    private alertService: AlertService) {
-    this.requestCadastroUsuario = new RequestCadastroUsuario();
-
+    private usuarioService: UsuarioService,
+    private alertService: AlertService,
+    private formBuilder: FormBuilder
+  ) {
   }
-
   ngOnInit(): void {
 
   }
 
   public salvarUsuario(): void {
 
-    this.cadastroUsuarioService.salvarUsuario(this.requestCadastroUsuario).subscribe((data) => {
-      //console.log(data);
+    if (this.usuario.dataNascimento) {
+      this.usuario.dataNascimento = new Date(this.usuario.dataNascimento);
+    }
+    this.usuarioService.salvarUsuario(this.usuario).subscribe((data) => {
+      console.log(data);
       this.alertService.success("Usuário cadastrado com sucesso!", "Sucesso!");
     },
       (httpError) => {

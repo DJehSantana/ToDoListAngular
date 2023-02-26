@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { CadastroUsuarioService } from 'src/app/resources/services/cadastro-usuario.service';
+import { UsuarioService } from 'src/app/resources/services/usuario.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent {
+export class TableComponent implements OnInit {
 
   usuario: any;
 
-  constructor(private usuarioService: CadastroUsuarioService) {
+  constructor(private usuarioService: UsuarioService) {
   }
-
-
 
   ngOnInit(): void {
     this.usuarioService.listarUsuarios().subscribe(user => {

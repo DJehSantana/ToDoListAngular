@@ -17,7 +17,7 @@ import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usua
 import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TableComponent } from './components/table/table.component';
-import { CadastroUsuarioService } from './resources/services/cadastro-usuario.service';
+import { UsuarioService } from './resources/services/usuario.service';
 
 
 @NgModule({
@@ -42,7 +42,7 @@ import { CadastroUsuarioService } from './resources/services/cadastro-usuario.se
     ButtonModule,
     CardModule
   ],
-  providers: [CadastroUsuarioService],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
