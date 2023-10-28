@@ -17,7 +17,6 @@ import { TarefaService } from 'src/app/resources/services/tarefa.service';
 export class CadastrarTarefaComponent implements OnInit, OnChanges {
 
   id: any;
-  tarefas: tarefaDTO[] = [];
   tarefa: tarefaDTO = new tarefaDTO();
   textoBotao: string = "Salvar";
   textoTitulo: string = "Cadastrar Nova Tarefa";
@@ -38,9 +37,7 @@ export class CadastrarTarefaComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.tarefaService.listarTarefas().subscribe(tarefas => {
-      this.tarefas = tarefas;
-    })
+
   }
 
   criarTarefa() {
