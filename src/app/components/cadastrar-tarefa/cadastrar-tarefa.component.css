@@ -1,0 +1,8 @@
+.ng-invalid.ng-touched:not(form) {
+    border: 1px solid #F48FB1;
+}
+
+.errorMessage {
+    color: #F48FB1;
+    font-size: 0.8rem;
+}

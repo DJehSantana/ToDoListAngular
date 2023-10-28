@@ -2,4 +2,22 @@
 
 <div class="p-d-flex p-jc-evenly p-flex-wrap">
 
+    <app-cadastrar-tarefa></app-cadastrar-tarefa>
+
+    <div class="p-grid">
+        <div class="p-col">
+            <app-kanban [status]="toDo"></app-kanban>
+        </div>
+        <div class="p-col">
+            <app-kanban [status]="doing"></app-kanban>
+        </div>
+        <div class="p-col">
+            <app-kanban [status]="pending"></app-kanban>
+        </div>
+        <div class="p-col">
+            <app-kanban [status]="done"></app-kanban>
+        </div>
+
+    </div>
+
 </div>

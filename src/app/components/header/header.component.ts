@@ -19,8 +19,7 @@ export class HeaderComponent {
   ngOnInit() {
     this.items = [
       { label: 'Home', icon: 'pi pi-fw pi-home', url: 'http://localhost:4200/' },
-      { label: 'Cadastro', url: 'http://localhost:4200/cadastro' },
-      { label: 'Usuario', url: 'http://localhost:4200/usuario' }
+      { label: 'Lista de Tarefas', icon: 'pi pi-fw pi-list', url: 'http://localhost:4200/tarefas' }
     ];
   }
 

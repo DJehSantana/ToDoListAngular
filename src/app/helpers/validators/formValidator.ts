@@ -5,11 +5,10 @@ export class FormValidator {
     formulario!: FormGroup;
 
 
-    get nome() { return this.formulario.get('nome') }
-    get login() { return this.formulario.get('login') }
-    get email() { return this.formulario.get('email') }
-    get senha() { return this.formulario.get('senha') }
-    get dataNascimento() { return this.formulario.get('dataNascimento') }
+    get titulo() { return this.formulario.get('titulo') }
+    get descricao() { return this.formulario.get('descricao') }
+    get conclusao() { return this.formulario.get('conclusao') }
+    get selectedStatus() { return this.formulario.get('selectedStatus') }
 
     constructor(private formBuilder: FormBuilder) {
 
@@ -17,24 +16,18 @@ export class FormValidator {
 
     public validaFormulario() {
         this.formulario = this.formBuilder.group({
-            nome: ['', Validators.maxLength(50)],
-            email: ['', Validators.compose([Validators.minLength(10), Validators.email])],
-            dataNascimento: [null],
-            login: ['', Validators.compose([Validators.minLength(5), Validators.maxLength(20)])],
-            senha: ['', Validators.compose([Validators.minLength(4), Validators.maxLength(10)])]
+            titulo: ['', [Validators.maxLength(30), Validators.required]],
+            descricao: ['', [Validators.minLength(5), Validators.required]],
+            conclusao: ['', Validators.required],
+            selectedStatus: [null]
         });
     }
 
-    isBlank(control?: AbstractControl | null): boolean {
-        return control?.errors?.['notBlank'];
-    }
+    //         this.form = new FormGroup({
+    //         conclusao: new FormControl(null, Validators.required),
+    //         status: new FormControl(null, Validators.required),
+    //         descricao: new FormControl(null, [Validators.required, Validators.maxLength(200)]),
+    // })
 
-    isNotEmail(control?: AbstractControl | null): boolean {
-        return control?.errors?.['email']
-    }
 
-    isInvalidLength(control?: AbstractControl | null): boolean {
-        const errors = control?.errors
-        return errors?.['minlength'] || errors?.['maxlength']
-    }
 }

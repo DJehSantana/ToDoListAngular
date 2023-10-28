@@ -1,0 +1,21 @@
+<p-card class="p-grid" [style]="{'min-width': '25%'}">
+    <h2 class="p-text-center">{{status}}</h2>
+
+    <p-dataView #dv [value]="tarefas" [rows]="10" [style]="{'min-width': '25%', 'min-height': '120px'}">
+        <ng-template let-tarefa pTemplate="listItem">
+            <div class="p-jc-center">
+                <div *ngIf="tarefa.status === status">
+                    <p-panel class="" header="{{tarefa.titulo}}">
+                        <div class="p-text-center">
+                            <span class="font-semibold">{{ tarefa.inicio | date: 'shortDate'}}</span>
+                        </div>
+                        <div>
+                            <span class=" font-semibold">{{ tarefa.conclusao | date: 'shortDate'}}</span>
+                        </div>
+                    </p-panel>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+
+</p-card>

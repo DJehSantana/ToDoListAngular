@@ -1,0 +1,58 @@
+<p-card class="p-fluid p-p-4 p-component">
+    <form class="p-formgrid">
+        <h4>Pesquisar por período </h4>
+        <div class="p-formgroupInline">
+            <div class="p-field p-col">
+                <label class="p-mr-2" for="inicio">Início</label>
+                <input [(ngModel)]="inicio" id="inicio" name="inicio" type="date" class="p-col-3">
+            </div>
+            <div class="p-field p-col">
+                <label class="p-mr-2" for="fim">Fim</label>
+                <input [(ngModel)]="fim" id="fim" name="fim" type="date" class="p-col-3">
+            </div>
+            <button pButton (click)="filtrarTarefas()" class="p-mr-2" style="width: auto;">Pesquisar</button>
+            <button pButton (click)="atualizarListaTarefas()" style="width: auto;" type="reset">Limpar</button>
+        </div>
+    </form>
+
+</p-card>
+
+<div class="card">
+
+    <p-table #dt [value]="tarefa" [rows]="10" responsiveLayout="stack" breakpoint="680px">
+
+        <ng-template pTemplate="header">
+            <h2>Lista de Tarefas</h2>
+            <tr>
+                <th pSortableColumn="titulo">Titulo</th>
+                <th pSortableColumn="descricao">Descrição </th>
+                <th pSortableColumn="criacao">Início </th>
+                <th pSortableColumn="conclusao">Previsão </th>
+                <th pSortableColumn="status">Status</th>
+                <th pSortableColumn="acoes" class="p-text-center">Ações</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-tarefa>
+            <tr>
+                <td>{{tarefa.titulo}}</td>
+                <td>{{tarefa.descricao}}</td>
+                <td>{{tarefa.criacao | date: 'shortDate'}}</td>
+                <td [ngClass]="{'atraso': tarefa.atrasada}">{{tarefa.conclusao | date: 'shortDate'}}</td>
+                <td>{{tarefa.status}}</td>
+                <td class="p-text-center">
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success"
+                        (click)="visualizarTarefa(tarefa)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                        (click)="deletarTarefa(tarefa.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+
+        </ng-template>
+    </p-table>
+
+    <app-historico-logs></app-historico-logs>
+
+    <app-tarefa [tarefa]="tarefa"></app-tarefa>
+</div>

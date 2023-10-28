@@ -1,0 +1,35 @@
+<p-dialog header="Detalhes Tarefa" [(visible)]="visible" [style]="{ width: '50vw' }">
+
+    <div class="p-fluid p-justify-center p-p-3">
+        <p-card header={{tarefa.titulo}} subheader="Criada em: {{tarefa.criacao | date: 'shortDate' }}"
+            [style]="{ width: '100%', padding: '16px' }">
+
+            <div class="p-grid p-jc-start">
+                <div class="p-col-12 p-field">
+                    <label for="conclusao" class="p-mr-2">Data prevista conclusão</label>
+                    <input #conclusao="ngModel" [(ngModel)]="tarefa.conclusao" name="conclusao" class="p-col-8 p-mt-2"
+                        id="conclusao" type="date">
+                </div>
+                <div class="p-col-12 p-field">
+                    <label>Status</label>
+                    <p-dropdown [(ngModel)]="selectedStatus" [options]="statusTarefa" optionLabel="nome"></p-dropdown>
+                </div>
+                <div class="p-col-12 p-field">
+                    <label>Descricao</label>
+                    <textarea [(ngModel)]="tarefa.descricao" class="p-col-12 p-mt-2" id="descricao" rows="5" cols="30"
+                        [autoResize]="true" pInputTextarea></textarea>
+                </div>
+            </div>
+
+            <ng-template pTemplate="footer">
+                <div class="p-grid p-jc-end">
+                    <p-button label="Save" icon="pi pi-check" styleClass="p-button w-10rem p-mr-2"
+                        (click)=atualizarTarefa(tarefa)></p-button>
+                    <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary w-10rem"
+                        [style]="{ 'margin-left': '.5em' }" (click)="closeModal()"></p-button>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+
+</p-dialog>

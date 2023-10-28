@@ -1,0 +1,55 @@
+<div class="p-grid p-justify-center card">
+    <div class="p-col-12 p-sm-10 p-md-6">
+        <p-card>
+            <form #form="ngForm" (ngSubmit)="criarTarefa()" class="p-grid">
+                <div class="p-col-12 p-text-center">
+                    <h2>{{textoTitulo}}</h2>
+                </div>
+                <div class="p-col-10 p-mx-auto">
+                    <label for="titulo">Titulo</label>
+                    <input #titulo="ngModel" [(ngModel)]="tarefa.titulo" name="titulo" class="p-col-12 p-mt-2"
+                        id="titulo" type="text" pInputText required>
+                    <!-- dirty || touched -> Verifica se o elemento foi tocado ou alterado -->
+                    <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="errorMessage">
+                        <div *ngIf="titulo.errors.required">
+                            Campo obrigatório.
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-10 p-mx-auto">
+                    <label for="descricao">Descrição</label>
+                    <textarea #descricao="ngModel" [(ngModel)]="tarefa.descricao" class="p-col-12 p-mt-2"
+                        name="descricao" id="descricao" rows="5" cols="30" [autoResize]="true" pInputTextarea required
+                        minlength="5"></textarea>
+                    <div *ngIf="descricao.invalid && (descricao.dirty || descricao.touched)" class="errorMessage">
+                        <div *ngIf="descricao.errors.required">
+                            Campo obrigatório.
+                        </div>
+                        <div *ngIf="descricao.errors.minlength">
+                            A descrição deve ter no mínimo 5 caracteres.
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-10 p-mx-auto">
+                    <label for="conclusao">Data prevista conclusão</label>
+                    <input #conclusao="ngModel" [(ngModel)]="tarefa.conclusao" name="conclusao" class="p-col-12 p-mt-2"
+                        id="conclusao" type="date" futureDate required>
+                    <div *ngIf="conclusao.invalid && (conclusao.dirty || conclusao.touched)" class="errorMessage">
+                        <div *ngIf="conclusao.errors.futureDate">
+                            A data deve ser posterior à data atual.
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-10 p-mx-auto p-text-right p-button-rounded">
+                    <button pButton class="p-col-3 p-mt-3 p-mr-3" pButton type="submit" icon="pi pi-check"
+                        label="{{textoBotao}}" [disabled]="form.invalid"></button>
+                    <button pButton class="p-col-3 p-mt-3" pButton type="button" icon="pi pi-times"
+                        label="Cancelar"></button>
+                </div>
+            </form>
+        </p-card>
+    </div>
+
+</div>^
+<!-- 
+eCadastro ? criarTarefa() : atualizarTarefa() -->
